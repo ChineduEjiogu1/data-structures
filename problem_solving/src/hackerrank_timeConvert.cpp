@@ -41,7 +41,7 @@ std::string timeConvert(std::string s)
     // seconds --
     if(s[6] - '0' < 6)
       sec = s[6] - '0';
-    if(s[3] - '0' > 5)
+    if(s[6] - '0' > 5)
       sec = s[6] - '0' - (s[6] - '0');
     if(s[7] - '0' <= 9)
       sec2 = s[7] - '0';
@@ -79,18 +79,19 @@ std::string timeConvert(std::string s)
     // seconds --
     if(s[6] - '0' < 6)
       sec = s[6] - '0';
-    if(s[3] - '0' > 5)
+    if(s[6] - '0' > 5)
       sec = s[6] - '0' - (s[6] - '0');
     if(s[7] - '0' <= 9)
       sec2 = s[7] - '0';
   }
   
-  std::string r = std::to_string(hr)  + std::to_string(hr2) + ':' + std::to_string(min) + std::to_string(min2) + ':' + std::to_string(sec) + std::to_string(sec2);
+  std::string r = std::to_string(hr)  + std::to_string(hr2) + ':' + std::to_string(min) + std::to_string(min2) + ':' + 
+  std::to_string(sec) + std::to_string(sec2);
   return r;
 } 
 
 int main() {
-  std::string time = "11:27:45AM";
+  std::string time = "12:45:09PM";
   
   std::cout << timeConvert(time) << '\n';
 
